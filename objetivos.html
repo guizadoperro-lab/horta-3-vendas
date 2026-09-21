@@ -1,0 +1,1621 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Conheça os objetivos da Horta do 3º Vendas e como o projeto busca transformar a arrecadação em novas oportunidades."
+    >
+
+    <title>Nossos Objetivos | Horta do 3º Vendas</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        /* ==================================================
+           BASE
+        ================================================== */
+
+        html {
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        .objetivos-page {
+            background: var(--bg);
+        }
+
+        /*
+        CORREÇÃO PRINCIPAL DO ESPAÇAMENTO
+        */
+
+        .objetivos-content .container {
+            width: calc(100% - 48px);
+            max-width: 1180px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+
+        /* ==================================================
+           FADE IN
+        ================================================== */
+
+        .objetivos-page .fade-in {
+            opacity: 0;
+            transform: translateY(35px);
+
+            transition:
+                opacity 0.8s ease,
+                transform 0.8s ease;
+        }
+
+        .objetivos-page .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+        /* DELAY DOS ELEMENTOS */
+
+        .objetivos-list .objetivo-item:nth-child(1) {
+            transition-delay: 0.05s;
+        }
+
+        .objetivos-list .objetivo-item:nth-child(2) {
+            transition-delay: 0.15s;
+        }
+
+        .objetivos-list .objetivo-item:nth-child(3) {
+            transition-delay: 0.25s;
+        }
+
+        .objetivos-list .objetivo-item:nth-child(4) {
+            transition-delay: 0.35s;
+        }
+
+        .objetivos-list .objetivo-item:nth-child(5) {
+            transition-delay: 0.45s;
+        }
+
+        .objetivos-list .objetivo-item:nth-child(6) {
+            transition-delay: 0.55s;
+        }
+
+
+        /* ==================================================
+           PLANTAS DE FUNDO
+        ================================================== */
+
+        .floating-plants {
+            position: fixed;
+            inset: 0;
+
+            pointer-events: none;
+            overflow: hidden;
+
+            z-index: 0;
+        }
+
+        .floating-plant {
+            position: absolute;
+
+            width: 85px;
+            height: 35px;
+
+            opacity: 0.10;
+
+            border-radius: 100% 0 100% 0;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(57,255,136,0.7),
+                    rgba(57,255,136,0.05)
+                );
+
+            filter: blur(0.5px);
+
+            animation:
+                plantFloat 10s ease-in-out infinite;
+        }
+
+        .floating-plant::after {
+            content: "";
+
+            position: absolute;
+
+            width: 2px;
+            height: 55px;
+
+            left: 42px;
+            top: 18px;
+
+            background: rgba(57,255,136,0.5);
+
+            transform: rotate(35deg);
+        }
+
+        .plant-1 {
+            top: 25%;
+            left: 8%;
+            animation-delay: 0s;
+        }
+
+        .plant-2 {
+            top: 43%;
+            right: 7%;
+            animation-delay: 2s;
+        }
+
+        .plant-3 {
+            top: 68%;
+            left: 12%;
+            animation-delay: 4s;
+        }
+
+        .plant-4 {
+            top: 82%;
+            right: 15%;
+            animation-delay: 6s;
+        }
+
+        @keyframes plantFloat {
+
+            0%,
+            100% {
+                transform:
+                    translate3d(0, 0, 0)
+                    rotate(-20deg);
+            }
+
+            50% {
+                transform:
+                    translate3d(18px, -25px, 0)
+                    rotate(-5deg);
+            }
+        }
+
+
+        /* ==================================================
+           CONTEÚDO
+        ================================================== */
+
+        .objetivos-content {
+            position: relative;
+            z-index: 2;
+        }
+
+
+        /* ==================================================
+           HERO
+        ================================================== */
+
+        .objetivos-hero {
+            position: relative;
+
+            min-height: 720px;
+
+            display: flex;
+            align-items: center;
+
+            overflow: hidden;
+
+            border-bottom:
+                1px solid
+                rgba(57,255,136,0.12);
+
+            background:
+                radial-gradient(
+                    circle at 75% 40%,
+                    rgba(57,255,136,0.12),
+                    transparent 38%
+                );
+        }
+
+        .objetivos-hero::after {
+            content: "";
+
+            position: absolute;
+            inset: 0;
+
+            pointer-events: none;
+
+            background:
+                radial-gradient(
+                    circle at 50% 50%,
+                    rgba(57,255,136,0.035),
+                    transparent 55%
+                );
+        }
+
+        .objetivos-hero-inner {
+            position: relative;
+            z-index: 2;
+
+            width: 100%;
+        }
+
+        .objetivos-tag {
+            display: block;
+
+            margin-bottom: 22px;
+
+            color: var(--green);
+
+            font-size: 13px;
+            font-weight: 800;
+
+            letter-spacing: 6px;
+        }
+
+        .objetivos-title {
+            max-width: 780px;
+
+            margin: 0;
+
+            color: var(--white);
+
+            font-size:
+                clamp(48px, 8vw, 92px);
+
+            line-height: 0.98;
+
+            letter-spacing: -5px;
+        }
+
+        .objetivos-title span {
+            color: var(--green);
+        }
+
+        .objetivos-intro {
+            max-width: 720px;
+
+            margin-top: 30px;
+
+            color: #b9c9c0;
+
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        .objetivos-line {
+            width: 110px;
+            height: 3px;
+
+            margin-top: 35px;
+
+            background: var(--green);
+
+            box-shadow:
+                0 0 18px
+                rgba(57,255,136,0.65);
+        }
+
+
+        /* ==================================================
+           SEÇÕES
+        ================================================== */
+
+        .objetivo-section {
+            position: relative;
+
+            padding: 100px 0;
+
+            border-bottom:
+                1px solid
+                rgba(57,255,136,0.08);
+        }
+
+        .objetivo-section .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .objetivo-heading {
+            margin-bottom: 45px;
+        }
+
+        .objetivo-number {
+            display: block;
+
+            margin-bottom: 18px;
+
+            color: var(--green);
+
+            font-size: 13px;
+            font-weight: 800;
+
+            letter-spacing: 5px;
+        }
+
+        .objetivo-heading h2 {
+            max-width: 850px;
+
+            margin: 0;
+
+            color: var(--white);
+
+            font-size:
+                clamp(38px, 6vw, 65px);
+
+            line-height: 1;
+
+            letter-spacing: -3px;
+        }
+
+        .objetivo-heading h2 span {
+            color: var(--green);
+        }
+
+        .professor-section .objetivo-heading p {
+            max-width: 700px;
+
+            margin: 25px auto 0;
+
+            color: var(--muted);
+
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
+
+        /* ==================================================
+           CAIXA DE TEXTO
+        ================================================== */
+
+        .objetivo-text-box {
+            position: relative;
+
+            max-width: 950px;
+
+            padding: 42px;
+
+            border:
+                1px solid
+                rgba(57,255,136,0.30);
+
+            border-radius: 24px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(10,30,18,0.82),
+                    rgba(5,17,10,0.68)
+                );
+
+            box-shadow:
+                0 25px 70px
+                rgba(0,0,0,0.25),
+
+                inset 0 0 35px
+                rgba(57,255,136,0.025);
+        }
+
+        .objetivo-text-box::before {
+            content: "";
+
+            position: absolute;
+
+            top: -1px;
+            left: 35px;
+
+            width: 150px;
+            height: 3px;
+
+            background: var(--green);
+
+            box-shadow:
+                0 0 15px
+                rgba(57,255,136,0.55);
+        }
+
+        .objetivo-text-box p {
+            margin: 0 0 22px;
+
+            color: #b7c7be;
+
+            font-size: 17px;
+
+            line-height: 1.9;
+        }
+
+        .objetivo-text-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .objetivo-text-box strong {
+            color: var(--green);
+        }
+
+
+        /* ==================================================
+           ARRECADAÇÃO
+        ================================================== */
+
+        .arrecadacao-box {
+            display: grid;
+
+            grid-template-columns:
+                1.1fr
+                0.9fr;
+
+            gap: 25px;
+
+            margin-top: 35px;
+        }
+
+        .arrecadacao-card {
+            position: relative;
+
+            padding: 32px;
+
+            border:
+                1px solid
+                rgba(57,255,136,0.22);
+
+            border-radius: 20px;
+
+            background:
+                rgba(7,22,13,0.72);
+
+            box-shadow:
+                inset 0 0 25px
+                rgba(57,255,136,0.02);
+        }
+
+        .arrecadacao-card h3 {
+            margin: 0 0 15px;
+
+            color: var(--white);
+
+            font-size: 22px;
+        }
+
+        .arrecadacao-card h3 span {
+            color: var(--green);
+        }
+
+        .arrecadacao-card p {
+            margin: 0;
+
+            color: var(--muted);
+
+            font-size: 15px;
+
+            line-height: 1.75;
+        }
+
+
+        /* ==================================================
+           PROFESSOR
+        ================================================== */
+
+        .professor-section {
+            text-align: center;
+        }
+
+        .professor-card {
+            position: relative;
+
+            max-width: 850px;
+
+            margin: 0 auto;
+
+            padding: 55px 45px;
+
+            overflow: hidden;
+
+            border:
+                1px solid
+                rgba(57,255,136,0.38);
+
+            border-radius: 28px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(8,27,15,0.92),
+                    rgba(4,14,8,0.82)
+                );
+
+            box-shadow:
+                0 0 0 1px rgba(57,255,136,0.04),
+                0 30px 80px rgba(0,0,0,0.35),
+                inset 0 0 45px rgba(57,255,136,0.035);
+        }
+
+        /*
+        BORDA VERDE DO CARD
+        */
+
+        .professor-card::before {
+            content: "";
+
+            position: absolute;
+            inset: 0;
+
+            pointer-events: none;
+
+            border-radius: 28px;
+
+            border:
+                1px solid
+                rgba(57,255,136,0.18);
+
+            box-shadow:
+                inset 0 0 30px
+                rgba(57,255,136,0.04);
+        }
+
+        .professor-card::after {
+            content: "";
+
+            position: absolute;
+
+            width: 180px;
+            height: 180px;
+
+            top: 50%;
+            left: 50%;
+
+            transform: translate(-50%, -50%);
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(57,255,136,0.10),
+                    transparent 70%
+                );
+
+            pointer-events: none;
+        }
+
+
+        /* ==================================================
+           FOTO DO PROFESSOR + NEON
+        ================================================== */
+
+        .professor-photo-wrap {
+            position: relative;
+
+            width: 190px;
+            height: 190px;
+
+            margin: 0 auto 35px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+        }
+
+        /*
+        ANEL NEON GIRANDO
+        */
+
+        .professor-photo-wrap::before {
+            content: "";
+
+            position: absolute;
+
+            inset: -9px;
+
+            border-radius: 50%;
+
+            background:
+                conic-gradient(
+                    from 0deg,
+                    transparent 0deg,
+                    transparent 35deg,
+                    rgba(57,255,136,0.15) 55deg,
+                    var(--green) 85deg,
+                    #00ff73 115deg,
+                    rgba(57,255,136,0.2) 145deg,
+                    transparent 190deg,
+                    transparent 360deg
+                );
+
+            animation:
+                professorSpin 2.5s linear infinite;
+
+            filter:
+                drop-shadow(0 0 7px rgba(57,255,136,0.8))
+                drop-shadow(0 0 18px rgba(57,255,136,0.4));
+        }
+
+        /*
+        FUNDO ENTRE O NEON E A FOTO
+        */
+
+        .professor-photo-wrap::after {
+            content: "";
+
+            position: absolute;
+
+            inset: 1px;
+
+            border-radius: 50%;
+
+            background: var(--bg);
+
+            z-index: 1;
+        }
+
+        @keyframes professorSpin {
+
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+
+        }
+
+        .professor-photo {
+            position: relative;
+
+            z-index: 2;
+
+            width: 170px;
+            height: 170px;
+
+            border-radius: 50%;
+
+            object-fit: cover;
+
+            border:
+                3px solid
+                rgba(57,255,136,0.45);
+
+            box-shadow:
+                0 0 25px
+                rgba(57,255,136,0.20);
+        }
+
+        .professor-card h2 {
+            position: relative;
+            z-index: 2;
+
+            margin: 0 0 18px;
+
+            color: var(--white);
+
+            font-size:
+                clamp(26px, 5vw, 38px);
+        }
+
+        .professor-card h2 span {
+            color: var(--green);
+        }
+
+        .professor-card p {
+            position: relative;
+            z-index: 2;
+
+            max-width: 700px;
+
+            margin: 0 auto 20px;
+
+            color: #aebeb5;
+
+            font-size: 16px;
+
+            line-height: 1.8;
+        }
+
+        .professor-card p strong {
+            color: #d7e8de;
+        }
+
+
+        /* ==================================================
+           OBJETIVOS ESPECÍFICOS
+        ================================================== */
+
+        .objetivos-list {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+
+            gap: 18px;
+        }
+
+        .objetivo-item {
+            padding: 28px;
+
+            border:
+                1px solid
+                rgba(57,255,136,0.20);
+
+            border-radius: 18px;
+
+            background:
+                rgba(8,25,15,0.65);
+
+            transition:
+                transform .3s ease,
+                border-color .3s ease,
+                box-shadow .3s ease;
+        }
+
+        .objetivo-item:hover {
+            transform: translateY(-5px);
+
+            border-color:
+                rgba(57,255,136,0.50);
+
+            box-shadow:
+                0 12px 35px
+                rgba(57,255,136,0.06);
+        }
+
+        .objetivo-item-number {
+            display: block;
+
+            margin-bottom: 12px;
+
+            color: var(--green);
+
+            font-size: 12px;
+            font-weight: 800;
+
+            letter-spacing: 3px;
+        }
+
+        .objetivo-item h3 {
+            margin: 0 0 10px;
+
+            color: var(--white);
+
+            font-size: 20px;
+        }
+
+        .objetivo-item p {
+            margin: 0;
+
+            color: var(--muted);
+
+            font-size: 14px;
+
+            line-height: 1.65;
+        }
+
+
+        /* ==================================================
+           FINAL
+        ================================================== */
+
+        .objetivos-final {
+            position: relative;
+
+            padding: 100px 20px;
+
+            text-align: center;
+
+            overflow: hidden;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(57,255,136,0.10),
+                    transparent 50%
+                );
+        }
+
+        .objetivos-final h2 {
+            margin: 0;
+
+            color: var(--white);
+
+            font-size:
+                clamp(28px, 5vw, 45px);
+        }
+
+        .objetivos-final h2 span {
+            color: var(--green);
+        }
+
+        .objetivos-final p {
+            max-width: 600px;
+
+            margin: 20px auto 0;
+
+            color: var(--muted);
+
+            font-size: 16px;
+
+            line-height: 1.7;
+        }
+
+
+        /* ==================================================
+           TABLET
+        ================================================== */
+
+        @media (max-width: 800px) {
+
+            .objetivos-content .container {
+                width: calc(100% - 40px);
+            }
+
+            .objetivos-hero {
+                min-height: 620px;
+            }
+
+            .objetivos-title {
+                letter-spacing: -3px;
+            }
+
+            .objetivo-section {
+                padding: 75px 0;
+            }
+
+            .arrecadacao-box {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+
+        /* ==================================================
+           CELULAR
+        ================================================== */
+
+        @media (max-width: 600px) {
+
+            .objetivos-content .container {
+                width: calc(100% - 36px);
+            }
+
+            .objetivos-hero {
+                min-height: 590px;
+            }
+
+            .objetivos-hero-inner {
+                padding-left: 0;
+                padding-right: 0;
+            }
+
+            .objetivos-tag {
+                font-size: 11px;
+                letter-spacing: 4px;
+            }
+
+            .objetivos-title {
+                font-size: 48px;
+                letter-spacing: -2.5px;
+            }
+
+            .objetivos-intro {
+                font-size: 15px;
+                line-height: 1.7;
+            }
+
+            .objetivo-section {
+                padding: 65px 0;
+            }
+
+            .objetivo-heading {
+                margin-bottom: 30px;
+            }
+
+            .objetivo-number {
+                font-size: 11px;
+                letter-spacing: 4px;
+            }
+
+            .objetivo-heading h2 {
+                font-size: 37px;
+                letter-spacing: -2px;
+            }
+
+            .objetivo-heading p {
+                font-size: 14px !important;
+            }
+
+            .objetivo-text-box {
+                padding: 28px 22px;
+
+                border-radius: 19px;
+            }
+
+            .objetivo-text-box::before {
+                left: 22px;
+                width: 95px;
+            }
+
+            .objetivo-text-box p {
+                font-size: 14px;
+                line-height: 1.75;
+            }
+
+            .arrecadacao-card {
+                padding: 24px 20px;
+            }
+
+            .arrecadacao-card h3 {
+                font-size: 19px;
+            }
+
+            .arrecadacao-card p {
+                font-size: 13px;
+            }
+
+            .professor-card {
+                padding: 42px 20px;
+
+                border-radius: 21px;
+            }
+
+            .professor-card::before {
+                border-radius: 21px;
+            }
+
+            .professor-photo-wrap {
+                width: 155px;
+                height: 155px;
+            }
+
+            .professor-photo-wrap::before {
+                inset: -8px;
+            }
+
+            .professor-photo {
+                width: 139px;
+                height: 139px;
+            }
+
+            .professor-card h2 {
+                font-size: 27px;
+            }
+
+            .professor-card p {
+                font-size: 14px;
+                line-height: 1.7;
+            }
+
+            .objetivos-list {
+                grid-template-columns: 1fr;
+            }
+
+            .objetivo-item {
+                padding: 23px 20px;
+            }
+
+            .objetivos-final {
+                padding: 75px 20px;
+            }
+
+            .floating-plant {
+                opacity: 0.07;
+            }
+
+        }
+
+
+        /* ==================================================
+           REDUZIR ANIMAÇÕES
+        ================================================== */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .floating-plant,
+            .professor-photo-wrap::before {
+                animation: none;
+            }
+
+            .objetivos-page .fade-in {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+
+            .objetivo-item {
+                transition: none;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body class="objetivos-page">
+
+
+    <!-- PLANTAS DE FUNDO -->
+
+    <div class="floating-plants">
+
+        <span class="floating-plant plant-1"></span>
+        <span class="floating-plant plant-2"></span>
+        <span class="floating-plant plant-3"></span>
+        <span class="floating-plant plant-4"></span>
+
+    </div>
+
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <a href="index.html" class="logo">
+
+            <div class="logo-icon">
+                🌱
+            </div>
+
+            <div class="logo-text">
+
+                <span>HORTA</span>
+
+                <strong>3º VENDAS</strong>
+
+            </div>
+
+        </a>
+
+
+        <button
+            class="menu-btn"
+            id="menuBtn"
+            aria-label="Abrir menu"
+            aria-expanded="false">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+    </header>
+
+
+    <!-- OVERLAY -->
+
+    <div class="overlay" id="overlay"></div>
+
+
+    <!-- MENU -->
+
+    <aside class="side-menu" id="sideMenu">
+
+        <div class="menu-top">
+
+            <span>MENU</span>
+
+            <button
+                class="close-btn"
+                id="closeBtn"
+                aria-label="Fechar menu">
+
+                ×
+
+            </button>
+
+        </div>
+
+
+        <nav class="menu-nav">
+
+            <a href="index.html" class="menu-link">
+                <span>🏠</span>
+                <strong>Início</strong>
+            </a>
+
+            <a href="missao.html" class="menu-link">
+                <span>🎯</span>
+                <strong>Missão, Visão e Valores</strong>
+            </a>
+
+            <a href="horta.html" class="menu-link">
+                <span>🌱</span>
+                <strong>Nossa Horta</strong>
+            </a>
+
+            <a href="curiosidades.html" class="menu-link">
+                <span>💡</span>
+                <strong>Curiosidades</strong>
+            </a>
+
+            <a href="arrecadacao.html" class="menu-link">
+                <span>💰</span>
+                <strong>Arrecadação</strong>
+            </a>
+
+            <a href="objetivos.html" class="menu-link">
+                <span>🚀</span>
+                <strong>Nossos Objetivos</strong>
+            </a>
+
+            <a href="contato.html" class="menu-link">
+                <span>📞</span>
+                <strong>Contato</strong>
+            </a>
+
+        </nav>
+
+
+        <div class="menu-footer">
+
+            <span>HORTA DO 3º VENDAS</span>
+
+            <small>Escola José da Costa</small>
+
+        </div>
+
+    </aside>
+
+
+    <!-- CONTEÚDO -->
+
+    <main class="objetivos-content">
+
+
+        <!-- HERO -->
+
+        <section class="objetivos-hero">
+
+            <div class="container">
+
+                <div class="objetivos-hero-inner fade-in">
+
+                    <span class="objetivos-tag">
+                        04 · NOSSOS OBJETIVOS
+                    </span>
+
+                    <h1 class="objetivos-title">
+                        O que queremos
+                        <span>alcançar?</span>
+                    </h1>
+
+                    <p class="objetivos-intro">
+                        O projeto Horta do 3º Vendas vai além
+                        do cultivo de alimentos. Nossa proposta
+                        é transformar o trabalho realizado pelos
+                        alunos em uma experiência de aprendizado,
+                        colaboração e construção de novas
+                        oportunidades para a turma.
+                    </p>
+
+                    <div class="objetivos-line"></div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- NOSSA PROPOSTA -->
+
+        <section class="objetivo-section">
+
+            <div class="container">
+
+                <div class="objetivo-heading fade-in">
+
+                    <span class="objetivo-number">
+                        01 · NOSSA PROPOSTA
+                    </span>
+
+                    <h2>
+                        Uma horta que gera
+                        <span>oportunidades.</span>
+                    </h2>
+
+                </div>
+
+
+                <div class="objetivo-text-box fade-in">
+
+                    <p>
+                        A Horta do 3º Vendas foi criada com o
+                        objetivo de unir
+                        <strong>educação, sustentabilidade e empreendedorismo</strong>
+                        em uma única iniciativa.
+                    </p>
+
+                    <p>
+                        A ideia é que os alunos participem de
+                        todas as etapas do projeto, desde o
+                        preparo da terra e o cultivo até a
+                        organização, divulgação e comercialização
+                        dos produtos.
+                    </p>
+
+                    <p>
+                        Dessa forma, a horta também se transforma
+                        em um espaço para desenvolver
+                        <strong>responsabilidade, trabalho em
+                        equipe, planejamento e iniciativa</strong>,
+                        colocando em prática conhecimentos que
+                        fazem parte da formação dos estudantes.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ARRECADAÇÃO -->
+
+        <section class="objetivo-section">
+
+            <div class="container">
+
+                <div class="objetivo-heading fade-in">
+
+                    <span class="objetivo-number">
+                        02 · ARRECADAÇÃO
+                    </span>
+
+                    <h2>
+                        Cultivar hoje para
+                        <span>construir amanhã.</span>
+                    </h2>
+
+                </div>
+
+
+                <div class="objetivo-text-box fade-in">
+
+                    <p>
+                        Um dos principais objetivos da Horta do
+                        3º Vendas é utilizar a produção como uma
+                        forma de
+                        <strong>arrecadação de recursos
+                        para a turma</strong>.
+                    </p>
+
+                    <p>
+                        Os alimentos cultivados poderão ser
+                        destinados à venda, e o valor arrecadado
+                        será utilizado para apoiar os próximos
+                        projetos, atividades e planos definidos
+                        pelos alunos.
+                    </p>
+
+                    <p>
+                        Mais do que conseguir recursos, queremos
+                        mostrar que uma ideia simples pode se
+                        transformar em uma iniciativa organizada,
+                        capaz de gerar resultados através do
+                        <strong>trabalho coletivo</strong>.
+                    </p>
+
+                </div>
+
+
+                <div class="arrecadacao-box">
+
+                    <div class="arrecadacao-card fade-in">
+
+                        <h3>
+                            💰 <span>Arrecadar</span>
+                        </h3>
+
+                        <p>
+                            Transformar parte da produção da
+                            horta em recursos para futuras
+                            atividades e projetos da turma.
+                        </p>
+
+                    </div>
+
+
+                    <div class="arrecadacao-card fade-in">
+
+                        <h3>
+                            🚀 <span>Investir</span>
+                        </h3>
+
+                        <p>
+                            Utilizar os recursos arrecadados
+                            de maneira planejada, contribuindo
+                            para novas experiências dos alunos.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PROFESSOR -->
+
+        <section class="objetivo-section professor-section">
+
+            <div class="container">
+
+                <div class="objetivo-heading fade-in">
+
+                    <span class="objetivo-number">
+                        03 · PARCERIA
+                    </span>
+
+                    <h2>
+                        Construindo o projeto
+                        <span>juntos.</span>
+                    </h2>
+
+                    <p>
+                        A participação de diferentes pessoas
+                        é fundamental para que a ideia possa
+                        sair do papel.
+                    </p>
+
+                </div>
+
+
+                <div class="professor-card fade-in">
+
+                    <div class="professor-photo-wrap">
+
+                        <img
+                            src="professor-aurelio.jpg"
+                            alt="Professor Aurélio Azevedo"
+                            class="professor-photo">
+
+                    </div>
+
+
+                    <h2>
+                        Professor
+                        <span>Aurélio Azevedo</span>
+                    </h2>
+
+
+                    <p>
+                        O projeto também conta com a participação
+                        do professor
+                        <strong>Aurélio Azevedo</strong>,
+                        contribuindo para o desenvolvimento da
+                        proposta junto aos alunos.
+                    </p>
+
+
+                    <p>
+                        A construção da horta envolve diálogo,
+                        planejamento e acompanhamento. A
+                        participação do professor ajuda a turma
+                        a transformar a ideia inicial em ações
+                        concretas, mantendo o projeto organizado
+                        e conectado aos objetivos da escola.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- OBJETIVOS ESPECÍFICOS -->
+
+        <section class="objetivo-section">
+
+            <div class="container">
+
+                <div class="objetivo-heading fade-in">
+
+                    <span class="objetivo-number">
+                        04 · OBJETIVOS ESPECÍFICOS
+                    </span>
+
+                    <h2>
+                        O que queremos
+                        <span>alcançar?</span>
+                    </h2>
+
+                </div>
+
+
+                <div class="objetivos-list">
+
+                    <article class="objetivo-item fade-in">
+
+                        <span class="objetivo-item-number">
+                            OBJETIVO 01
+                        </span>
+
+                        <h3>
+                            🌱 Desenvolver a horta
+                        </h3>
+
+                        <p>
+                            Manter um espaço de cultivo organizado,
+                            sustentável e utilizado como ambiente
+                            de aprendizado.
+                        </p>
+
+                    </article>
+
+
+                    <article class="objetivo-item fade-in">
+
+                        <span class="objetivo-item-number">
+                            OBJETIVO 02
+                        </span>
+
+                        <h3>
+                            💰 Arrecadar recursos
+                        </h3>
+
+                        <p>
+                            Utilizar a produção da horta como
+                            uma possibilidade de arrecadação
+                            para futuras ações da turma.
+                        </p>
+
+                    </article>
+
+
+                    <article class="objetivo-item fade-in">
+
+                        <span class="objetivo-item-number">
+                            OBJETIVO 03
+                        </span>
+
+                        <h3>
+                            🤝 Trabalhar em equipe
+                        </h3>
+
+                        <p>
+                            Incentivar a colaboração entre os
+                            alunos e dividir responsabilidades
+                            durante o desenvolvimento do projeto.
+                        </p>
+
+                    </article>
+
+
+                    <article class="objetivo-item fade-in">
+
+                        <span class="objetivo-item-number">
+                            OBJETIVO 04
+                        </span>
+
+                        <h3>
+                            📚 Aprender na prática
+                        </h3>
+
+                        <p>
+                            Desenvolver conhecimentos relacionados
+                            ao cultivo, organização, planejamento
+                            e empreendedorismo.
+                        </p>
+
+                    </article>
+
+
+                    <article class="objetivo-item fade-in">
+
+                        <span class="objetivo-item-number">
+                            OBJETIVO 05
+                        </span>
+
+                        <h3>
+                            🚀 Criar novas oportunidades
+                        </h3>
+
+                        <p>
+                            Transformar o resultado do trabalho
+                            em novas experiências e atividades
+                            para os estudantes.
+                        </p>
+
+                    </article>
+
+
+                    <article class="objetivo-item fade-in">
+
+                        <span class="objetivo-item-number">
+                            OBJETIVO 06
+                        </span>
+
+                        <h3>
+                            🌍 Pensar no futuro
+                        </h3>
+
+                        <p>
+                            Incentivar atitudes sustentáveis e
+                            mostrar que pequenas ações podem
+                            gerar resultados maiores.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FINAL -->
+
+        <section class="objetivos-final fade-in">
+
+            <h2>
+                Plantamos ideias.
+                <span>Cultivamos possibilidades.</span>
+            </h2>
+
+            <p>
+                Cada etapa da Horta do 3º Vendas representa
+                uma oportunidade de aprender, colaborar e
+                construir algo que possa continuar crescendo
+                junto com a turma.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="site-footer">
+
+        <div class="footer-inner">
+
+            <div class="footer-brand">
+
+                <strong>
+                    HORTA DO 3º VENDAS
+                </strong>
+
+                <span>
+                    Escola José da Costa
+                </span>
+
+            </div>
+
+
+            <div class="footer-credit">
+
+                <span>
+                    Projeto Escolar
+                </span>
+
+                <span>
+                    Guilherme Barreto
+                </span>
+
+            </div>
+
+
+            <div class="footer-bottom">
+                © 2026 Horta do 3º Vendas
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

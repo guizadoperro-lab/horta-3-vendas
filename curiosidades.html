@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Curiosidades sobre a Horta do 3º Vendas."
+    >
+
+    <title>Curiosidades | Horta do 3º Vendas</title>
+
+    <link rel="stylesheet" href="style.css">
+
+
+    <!-- =====================================================
+         AJUSTES DA PÁGINA CURIOSIDADES
+    ====================================================== -->
+
+    <style>
+
+        /* =================================================
+           CABEÇALHO
+        ================================================= */
+
+        .header-content {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .menu-btn {
+            margin-left: auto;
+            flex-shrink: 0;
+        }
+
+
+        /* =================================================
+           MENU LATERAL À DIREITA
+        ================================================= */
+
+        .side-menu {
+            left: auto !important;
+            right: 0 !important;
+
+            transform: translateX(100%) !important;
+        }
+
+        .side-menu.open {
+            transform: translateX(0) !important;
+        }
+
+
+        /* =================================================
+           HERO
+        ================================================= */
+
+        .page-hero {
+            min-height: auto !important;
+            height: auto !important;
+
+            padding-top: 125px !important;
+            padding-bottom: 35px !important;
+        }
+
+        .page-hero .hero-content {
+            max-width: 700px;
+        }
+
+        .page-hero .hero-description {
+            max-width: 650px;
+        }
+
+
+        /* =================================================
+           SEÇÃO CURIOSIDADES
+        ================================================= */
+
+        .curiosidades-section {
+            padding-top: 25px !important;
+        }
+
+        .curiosidades-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+
+            gap: 16px;
+
+            margin-top: 28px;
+
+        }
+
+
+        /* =================================================
+           CARDS
+        ================================================= */
+
+        .curiosidade-card {
+
+            overflow: hidden;
+
+            background: var(--card);
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 18px;
+
+            box-shadow: var(--shadow);
+
+            transition:
+                transform 0.3s ease,
+                border-color 0.3s ease;
+
+        }
+
+        .curiosidade-card:hover {
+
+            transform: translateY(-4px);
+
+            border-color:
+                rgba(57, 255, 136, 0.45);
+
+        }
+
+
+        /* =================================================
+           IMAGENS
+        ================================================= */
+
+        .curiosidade-image {
+
+            position: relative;
+
+            width: 100%;
+            height: 175px;
+
+            overflow: hidden;
+
+        }
+
+        .curiosidade-image img {
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
+
+        }
+
+
+        /* =================================================
+           NÚMERO
+        ================================================= */
+
+        .curiosidade-number {
+
+            position: absolute;
+
+            top: 12px;
+            left: 12px;
+
+            min-width: 40px;
+
+            padding: 6px 9px;
+
+            text-align: center;
+
+            background:
+                rgba(6, 16, 10, 0.9);
+
+            border:
+                1px solid var(--green);
+
+            border-radius: 8px;
+
+            color: var(--green);
+
+            font-size: 12px;
+
+            font-weight: bold;
+
+        }
+
+
+        /* =================================================
+           CONTEÚDO
+        ================================================= */
+
+        .curiosidade-content {
+
+            padding: 17px;
+
+        }
+
+        .curiosidade-icon {
+
+            display: block;
+
+            font-size: 24px;
+
+            margin-bottom: 7px;
+
+        }
+
+        .curiosidade-content h3 {
+
+            margin:
+                0 0 9px;
+
+            color: var(--white);
+
+            font-size: 18px;
+
+            line-height: 1.3;
+
+        }
+
+        .curiosidade-content p {
+
+            margin: 0;
+
+            color: var(--muted);
+
+            font-size: 13px;
+
+            line-height: 1.6;
+
+        }
+
+
+        /* =================================================
+           5º CARD
+        ================================================= */
+
+        .curiosidade-card:last-child {
+
+            grid-column: 1 / -1;
+
+            display: grid;
+
+            grid-template-columns:
+                42% 58%;
+
+        }
+
+        .curiosidade-card:last-child
+        .curiosidade-image {
+
+            height: 100%;
+
+            min-height: 180px;
+
+        }
+
+        .curiosidade-card:last-child
+        .curiosidade-content {
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+        }
+
+
+        /* =================================================
+           APRENDER NA PRÁTICA
+        ================================================= */
+
+        .learning-box {
+
+            margin-top: 10px;
+
+            padding: 28px;
+
+            background: var(--card);
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 20px;
+
+            box-shadow: var(--shadow);
+
+        }
+
+        .learning-box h2 {
+
+            max-width: 600px;
+
+            margin:
+                10px 0 14px;
+
+            color: var(--white);
+
+            font-size: 29px;
+
+            line-height: 1.15;
+
+        }
+
+        .learning-box p {
+
+            max-width: 650px;
+
+            margin:
+                0 0 20px;
+
+            color: var(--muted);
+
+            font-size: 14px;
+
+            line-height: 1.7;
+
+        }
+
+
+        /* =================================================
+           BOTÃO
+        ================================================= */
+
+        .learning-box .btn,
+        .cta-section .btn {
+
+            text-decoration: none;
+
+        }
+
+
+        /* =================================================
+           RODAPÉ
+           FONTES IGUAIS AO ESTILO ANTIGO
+        ================================================= */
+
+        .footer {
+
+            padding-top: 35px !important;
+            padding-bottom: 30px !important;
+
+        }
+
+        .footer-content {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 30px;
+
+        }
+
+        .footer-brand {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+        }
+
+        .footer-brand .logo-icon {
+
+            font-size: 30px;
+
+        }
+
+        .footer-brand strong {
+
+            display: block;
+
+            color: var(--white);
+
+            font-size: 15px;
+
+            line-height: 1.3;
+
+        }
+
+        .footer-brand span:not(.logo-icon) {
+
+            display: block;
+
+            margin-top: 3px;
+
+            color: var(--muted);
+
+            font-size: 11px;
+
+        }
+
+        .footer-info {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: flex-end;
+
+            gap: 18px;
+
+            color: var(--muted);
+
+            font-size: 11px;
+
+            line-height: 1.5;
+
+        }
+
+        .footer-info span {
+
+            font-size: 11px;
+
+        }
+
+
+        /* =================================================
+           MOBILE
+        ================================================= */
+
+        @media (max-width: 700px) {
+
+            .page-hero {
+
+                padding-top: 110px !important;
+                padding-bottom: 30px !important;
+
+            }
+
+            .curiosidades-section {
+
+                padding-top: 20px !important;
+
+            }
+
+            .curiosidades-grid {
+
+                grid-template-columns: 1fr;
+
+                gap: 14px;
+
+            }
+
+            .curiosidade-image {
+
+                height: 170px;
+
+            }
+
+            .curiosidade-card:last-child {
+
+                grid-column: auto;
+
+                display: block;
+
+            }
+
+            .curiosidade-card:last-child
+            .curiosidade-image {
+
+                height: 170px;
+
+                min-height: 0;
+
+            }
+
+            .learning-box {
+
+                padding: 24px;
+
+            }
+
+            .learning-box h2 {
+
+                font-size: 25px;
+
+            }
+
+
+            /* RODAPÉ MOBILE */
+
+            .footer-content {
+
+                display: block;
+
+            }
+
+            .footer-brand {
+
+                margin-bottom: 25px;
+
+            }
+
+            .footer-info {
+
+                display: flex;
+
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                justify-content: flex-start;
+
+                gap: 5px;
+
+                padding-top: 20px;
+
+                border-top:
+                    1px solid var(--border);
+
+            }
+
+            .footer-info span {
+
+                font-size: 11px;
+
+            }
+
+        }
+
+
+        /* =================================================
+           CELULARES PEQUENOS
+        ================================================= */
+
+        @media (max-width: 450px) {
+
+            .curiosidade-image {
+
+                height: 155px;
+
+            }
+
+            .curiosidade-content {
+
+                padding: 15px;
+
+            }
+
+            .curiosidade-content h3 {
+
+                font-size: 17px;
+
+            }
+
+            .curiosidade-content p {
+
+                font-size: 13px;
+
+            }
+
+            .footer-brand strong {
+
+                font-size: 14px;
+
+            }
+
+            .footer-info span {
+
+                font-size: 10px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="header">
+
+        <div class="header-content">
+
+
+            <a
+                href="index.html"
+                class="logo"
+            >
+
+                <span class="logo-icon">
+                    🌱
+                </span>
+
+                <span class="logo-text">
+                    Horta do 3º Vendas
+                </span>
+
+            </a>
+
+
+            <!-- MENU À DIREITA -->
+
+            <button
+                class="menu-btn"
+                id="menuBtn"
+                aria-label="Abrir menu"
+                aria-expanded="false"
+            >
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         OVERLAY
+    ====================================================== -->
+
+    <div
+        class="overlay"
+        id="overlay"
+    ></div>
+
+
+
+    <!-- =====================================================
+         MENU LATERAL
+    ====================================================== -->
+
+    <aside
+        class="side-menu"
+        id="sideMenu"
+    >
+
+        <div class="menu-top">
+
+            <div>
+
+                <span class="menu-small">
+                    NAVEGAÇÃO
+                </span>
+
+                <h2>
+                    Horta do 3º Vendas
+                </h2>
+
+            </div>
+
+
+            <button
+                class="close-btn"
+                id="closeBtn"
+                aria-label="Fechar menu"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <nav class="menu-nav">
+
+
+            <a
+                href="index.html"
+                class="menu-link"
+            >
+                <span>🏠</span>
+                <span>Início</span>
+            </a>
+
+
+            <a
+                href="missao.html"
+                class="menu-link"
+            >
+                <span>🎯</span>
+                <span>Missão, Visão e Valores</span>
+            </a>
+
+
+            <a
+                href="horta.html"
+                class="menu-link"
+            >
+                <span>🌱</span>
+                <span>Nossa Horta</span>
+            </a>
+
+
+            <a
+                href="curiosidades.html"
+                class="menu-link"
+            >
+                <span>💡</span>
+                <span>Curiosidades</span>
+            </a>
+
+
+            <a
+                href="arrecadacao.html"
+                class="menu-link"
+            >
+                <span>💰</span>
+                <span>Arrecadação</span>
+            </a>
+
+
+            <a
+                href="objetivos.html"
+                class="menu-link"
+            >
+                <span>🚀</span>
+                <span>Nossos Objetivos</span>
+            </a>
+
+
+            <a
+                href="contato.html"
+                class="menu-link"
+            >
+                <span>📞</span>
+                <span>Contato</span>
+            </a>
+
+
+        </nav>
+
+
+        <div class="menu-footer">
+
+            <span>
+                PROJETO ESCOLAR
+            </span>
+
+            <strong>
+                Escola José da Costa
+            </strong>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         CONTEÚDO
+    ====================================================== -->
+
+    <main>
+
+
+        <!-- =================================================
+             HERO
+        ================================================== -->
+
+        <section class="hero page-hero">
+
+            <div class="hero-glow"></div>
+
+
+            <div class="hero-content fade-in">
+
+
+                <span class="hero-tag">
+                    💡 VOCÊ SABIA?
+                </span>
+
+
+                <h1>
+
+                    Curiosidades
+                    <span>
+                        da nossa horta.
+                    </span>
+
+                </h1>
+
+
+                <p class="hero-description">
+
+                    Descubra fatos interessantes sobre os alimentos,
+                    o cultivo e a natureza que fazem parte do nosso
+                    projeto.
+
+                </p>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             FATOS
+        ================================================== -->
+
+        <section
+            class="section curiosidades-section"
+        >
+
+
+            <div class="section-heading fade-in">
+
+                <div>
+
+                    <span class="mini-title">
+                        FATOS DA HORTA
+                    </span>
+
+                    <h2>
+                        Pequenas descobertas,
+                        grandes aprendizados.
+                    </h2>
+
+                </div>
+
+
+                <span class="section-number">
+                    01
+                </span>
+
+            </div>
+
+
+
+            <div class="curiosidades-grid">
+
+
+                <!-- 01 -->
+
+                <article
+                    class="curiosidade-card fade-in"
+                >
+
+                    <div class="curiosidade-image">
+
+                        <img
+                            src="curiosidade1.jpg"
+                            alt="Alface crescendo na horta"
+                            loading="lazy"
+                        >
+
+                        <span class="curiosidade-number">
+                            01
+                        </span>
+
+                    </div>
+
+
+                    <div class="curiosidade-content">
+
+                        <span class="curiosidade-icon">
+                            🥬
+                        </span>
+
+                        <h3>
+                            A alface cresce rápido
+                        </h3>
+
+                        <p>
+
+                            A alface é uma das hortaliças que pode
+                            apresentar um crescimento relativamente
+                            rápido, dependendo das condições de solo,
+                            água, luz e temperatura.
+
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- 02 -->
+
+                <article
+                    class="curiosidade-card fade-in"
+                >
+
+                    <div class="curiosidade-image">
+
+                        <img
+                            src="curiosidade2.jpg"
+                            alt="Cenoura crescendo debaixo da terra"
+                            loading="lazy"
+                        >
+
+                        <span class="curiosidade-number">
+                            02
+                        </span>
+
+                    </div>
+
+
+                    <div class="curiosidade-content">
+
+                        <span class="curiosidade-icon">
+                            🥕
+                        </span>
+
+                        <h3>
+                            A cenoura cresce debaixo da terra
+                        </h3>
+
+                        <p>
+
+                            A parte da cenoura que normalmente
+                            consumimos se desenvolve no solo.
+                            Enquanto isso, suas folhas crescem
+                            acima da terra.
+
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- 03 -->
+
+                <article
+                    class="curiosidade-card fade-in"
+                >
+
+                    <div class="curiosidade-image">
+
+                        <img
+                            src="curiosidade3.jpg"
+                            alt="Tomates verdes e vermelhos no mesmo pé"
+                            loading="lazy"
+                        >
+
+                        <span class="curiosidade-number">
+                            03
+                        </span>
+
+                    </div>
+
+
+                    <div class="curiosidade-content">
+
+                        <span class="curiosidade-icon">
+                            🍅
+                        </span>
+
+                        <h3>
+                            O tomate muda de cor conforme amadurece
+                        </h3>
+
+                        <p>
+
+                            Conforme amadurece, o tomate passa por
+                            mudanças de cor. É possível encontrar
+                            frutos verdes e vermelhos no mesmo pé
+                            em diferentes estágios de desenvolvimento.
+
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- 04 -->
+
+                <article
+                    class="curiosidade-card fade-in"
+                >
+
+                    <div class="curiosidade-image">
+
+                        <img
+                            src="curiosidade4.jpg"
+                            alt="Abelha polinizando uma flor"
+                            loading="lazy"
+                        >
+
+                        <span class="curiosidade-number">
+                            04
+                        </span>
+
+                    </div>
+
+
+                    <div class="curiosidade-content">
+
+                        <span class="curiosidade-icon">
+                            🐝
+                        </span>
+
+                        <h3>
+                            Os insetos ajudam na horta
+                        </h3>
+
+                        <p>
+
+                            Alguns insetos, como as abelhas,
+                            participam da polinização das flores.
+                            Esse processo é importante para a
+                            reprodução de muitas plantas e para
+                            a formação de frutos e sementes.
+
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- 05 -->
+
+                <article
+                    class="curiosidade-card fade-in"
+                >
+
+                    <div class="curiosidade-image">
+
+                        <img
+                            src="curiosidade5.jpg"
+                            alt="Cebola crescendo debaixo da terra"
+                            loading="lazy"
+                        >
+
+                        <span class="curiosidade-number">
+                            05
+                        </span>
+
+                    </div>
+
+
+                    <div class="curiosidade-content">
+
+                        <span class="curiosidade-icon">
+                            🧅
+                        </span>
+
+                        <h3>
+                            A cebola cresce embaixo da terra
+                        </h3>
+
+                        <p>
+
+                            A parte que usamos da cebola se
+                            desenvolve no solo. Suas raízes ficam
+                            abaixo da terra, enquanto as folhas
+                            crescem para fora do solo.
+
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             APRENDER NA PRÁTICA
+        ================================================== -->
+
+        <section class="section">
+
+
+            <div class="learning-box fade-in">
+
+
+                <span class="mini-title">
+                    🌱 APRENDER NA PRÁTICA
+                </span>
+
+
+                <h2>
+                    A horta também é
+                    uma sala de aula.
+                </h2>
+
+
+                <p>
+
+                    Cuidar das plantas permite aprender sobre
+                    natureza, alimentação, sustentabilidade,
+                    responsabilidade e trabalho em equipe.
+
+                </p>
+
+
+                <!-- AGORA VAI PARA ARRECADAÇÃO -->
+
+                <a
+                    href="arrecadacao.html"
+                    class="btn btn-primary"
+                >
+
+                    Arrecadação
+
+                    <span>
+                        →
+                    </span>
+
+                </a>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             CTA
+        ================================================== -->
+
+        <section class="cta-section">
+
+
+            <div class="cta-content fade-in">
+
+
+                <span class="mini-title">
+                    CONTINUE EXPLORANDO
+                </span>
+
+
+                <h2>
+                    Tem muito mais
+                    para descobrir.
+                </h2>
+
+
+                <p>
+
+                    Veja como nossa horta funciona e acompanhe
+                    um pouco do trabalho realizado pelo 3º Vendas.
+
+                </p>
+
+
+                <!-- AGORA VAI PARA ARRECADAÇÃO -->
+
+                <a
+                    href="arrecadacao.html"
+                    class="btn btn-primary"
+                >
+
+                    Arrecadação
+
+                    <span>
+                        →
+                    </span>
+
+                </a>
+
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         RODAPÉ
+    ====================================================== -->
+
+    <footer class="footer">
+
+
+        <div class="footer-content">
+
+
+            <div class="footer-brand">
+
+                <span class="logo-icon">
+                    🌱
+                </span>
+
+
+                <div>
+
+                    <strong>
+                        Horta do 3º Vendas
+                    </strong>
+
+                    <span>
+                        Projeto Escolar
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+<footer class="site-footer">
+    <div class="footer-inner">
+
+        <div class="footer-brand">
+            <strong>HORTA DO 3º VENDAS</strong>
+            <span>Escola José da Costa</span>
+        </div>
+
+        <div class="footer-credit">
+            <span>Projeto Escolar</span>
+            <span>Guilherme Barreto</span>
+        </div>
+
+        <div class="footer-bottom">
+            © 2026 Horta do 3º Vendas
+        </div>
+
+    </div>
+</footer>
+
+
+
+    <!-- =====================================================
+         SCRIPT
+    ====================================================== -->
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
